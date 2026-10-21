@@ -1,0 +1,5 @@
+{
+  "name": "Focus Flux",
+  "description": "A neuro-inclusive social gaming platform for focus training and cognitive profiling.",
+  "requestFramePermissions": ["accelerometer", "gyroscope", "camera"]
+}
