@@ -6,7 +6,7 @@ FocusFlux is a full-stack web application designed to support individuals with A
 
 ## Features
 
-### 🧠 Cognitive Training Arcade
+### Cognitive Training Arcade
 A library of gamified exercises targeting executive function and focus:
 
 | Component | Purpose |
@@ -20,7 +20,7 @@ A library of gamified exercises targeting executive function and focus:
 | **SpaceMatch** | Working memory & spatial reasoning |
 | **SteadyStream** | Sustained attention training |
 
-### 🌊 Calm & Grounding Exercises
+### Calm & Grounding Exercises
 Therapeutic tools for regulation and de-escalation:
 
 - **CalmCascade** – Guided visual breathing and calming flows
@@ -30,23 +30,23 @@ Therapeutic tools for regulation and de-escalation:
 - **EchoLink** – Sound-based mindfulness
 - **QuietSpaceFinder** – Sensory environment finder for calm spaces
 
-### 🤖 AI-Powered Support
+### AI-Powered Support
 - **FocusFlowChat** – A floating Gemini AI chatbot providing on-demand focus strategies, coping tips, and ADHD guidance
 - **Personalised recommendations** based on onboarding assessment results
 
-### 📊 Dashboard & Progress Tracking
+### Dashboard & Progress Tracking
 - **Dashboard** – Visual progress metrics and session history via Recharts
 - **CognitiveReport** – AI-generated summaries of cognitive performance trends
 - **OnboardingTest** – Initial ADHD/focus assessment to tailor the experience
 
-### 🏥 Clinical Portal
+### Clinical Portal
 - **ClinicalPortal** – Dedicated interface for clinicians and therapists to view patient data
 - **ReportSender** – Secure report generation and sharing
 
-### 💬 Real-Time Community
+### Real-Time Community
 - **ChillChat** – Socket.io-powered global community chat room for peer support
 
-### 🌍 Internationalisation
+### Internationalisation
 - Multi-language support via a built-in `i18n` translation system
 
 ---
@@ -150,20 +150,20 @@ The app will be available at **[http://localhost:3000](http://localhost:3000)**.
 ```
 focusflux/
 ├── src/
-│   ├── components/       # All UI components (games, exercises, portals)
-│   ├── lib/              # Utility functions (cn, etc.)
-│   ├── i18n/             # Translation strings
-│   ├── types.ts          # Shared TypeScript types
-│   ├── constants.ts      # Game definitions and config
-│   ├── firebase.ts       # Firebase initialisation
-│   └── App.tsx           # Root application component & routing
-├── server.ts             # Express + Socket.io backend server
-├── firebase-applet-config.json  # Firebase project config
-├── firestore.rules       # Firestore security rules
-├── vite.config.ts        # Vite build configuration
-├── tsconfig.json         # TypeScript configuration
-├── .env.example          # Environment variable template
-└── index.html            # HTML entry point
+│  ├── components/    # All UI components (games, exercises, portals)
+│  ├── lib/       # Utility functions (cn, etc.)
+│  ├── i18n/       # Translation strings
+│  ├── types.ts     # Shared TypeScript types
+│  ├── constants.ts   # Game definitions and config
+│  ├── firebase.ts    # Firebase initialisation
+│  └── App.tsx      # Root application component & routing
+├── server.ts       # Express + Socket.io backend server
+├── firebase-applet-config.json # Firebase project config
+├── firestore.rules    # Firestore security rules
+├── vite.config.ts    # Vite build configuration
+├── tsconfig.json     # TypeScript configuration
+├── .env.example     # Environment variable template
+└── index.html      # HTML entry point
 ```
 
 ---
