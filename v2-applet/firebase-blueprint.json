@@ -1,0 +1,69 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile with cognitive metrics and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique identifier for the user." },
+        "displayName": { "type": "string", "description": "User's public name." },
+        "photoURL": { "type": "string", "description": "URL to the user's avatar." },
+        "email": { "type": "string", "format": "email", "description": "User's private email." },
+        "bestScore": { "type": "number", "description": "Highest score achieved." },
+        "avgLatency": { "type": "number", "description": "Average inhibition latency across sessions." },
+        "fidgetMetric": { "type": "number", "description": "Average hand tremor metric." },
+        "recommendedFocus": { "type": "string", "description": "The cognitive focus area recommended for the user." },
+        "playCounts": { "type": "object", "description": "Map of game IDs to play counts." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the user joined." }
+      },
+      "required": ["uid", "displayName", "email", "createdAt"]
+    },
+    "GameSession": {
+      "title": "GameSession",
+      "description": "A single focus training session.",
+      "type": "object",
+      "properties": {
+        "sessionId": { "type": "string", "description": "Unique session ID." },
+        "uid": { "type": "string", "description": "User ID who played the session." },
+        "score": { "type": "number", "description": "Score achieved in this session." },
+        "errors": { "type": "number", "description": "Inhibition errors made." },
+        "avgLatency": { "type": "number", "description": "Average latency in this session." },
+        "fidgetMetric": { "type": "number", "description": "Fidget metric for this session." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "When the session occurred." }
+      },
+      "required": ["sessionId", "uid", "score", "errors", "timestamp"]
+    },
+    "Challenge": {
+      "title": "Challenge",
+      "description": "A real-time duel between two players.",
+      "type": "object",
+      "properties": {
+        "challengeId": { "type": "string", "description": "Unique challenge ID." },
+        "player1": { "type": "string", "description": "UID of the first player." },
+        "player2": { "type": "string", "description": "UID of the second player (optional until joined)." },
+        "status": { "type": "string", "enum": ["waiting", "active", "completed"], "description": "Current state of the challenge." },
+        "winner": { "type": "string", "description": "UID of the winner." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the challenge was created." }
+      },
+      "required": ["challengeId", "player1", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profile documents."
+    },
+    "/sessions/{sessionId}": {
+      "schema": "GameSession",
+      "description": "Individual game session logs."
+    },
+    "/challenges/{challengeId}": {
+      "schema": "Challenge",
+      "description": "Real-time challenge records."
+    },
+    "/test/connection": {
+      "schema": "object",
+      "description": "Publicly readable document for connection verification."
+    }
+  }
+}
