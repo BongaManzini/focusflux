@@ -791,7 +791,30 @@ export default function App() {
         {showChat && <FocusFlowChat onClose={() => setShowChat(false)} />}
       </AnimatePresence>
 
-      <footer className="p-6 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-stone-400 border-t border-stone-200" dangerouslySetInnerHTML={{ __html: t.copyright }} />
+      {/* Business First Enterprise Footer */}
+      <footer className="p-6 border-t-2 border-stone-200 bg-stone-50/50 font-mono text-xs text-stone-500 mb-16 md:mb-0">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <span className="font-black text-black uppercase tracking-wider">
+              &copy; 2026 FocusFlux&trade; &bull; Cognitive Performance &amp; Neuro-Adaptive Architecture
+            </span>
+            <span className="hidden sm:inline text-stone-300">&bull;</span>
+            <span className="text-[10px] text-stone-400">Enterprise Productivity Engine</span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px]">
+            <span>Developed by <strong className="text-black">Bonga Manzini</strong></span>
+            <span className="text-stone-300">&bull;</span>
+            <a 
+              href="https://github.com/BongaManzini/FocusFlux" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="font-black text-black underline hover:text-yellow-600 transition-colors"
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </div>
+      </footer>
       {/* Mobile Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-4 border-black p-4 flex justify-around items-center md:hidden z-50">
         <button 
